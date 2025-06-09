@@ -1,0 +1,126 @@
+:root {
+  --h-font: "Capriola", sans-serif;
+  --main-font: "Ysabeau Office", sans-serif;
+  --main-color: #3ca55c;
+  --light-color: #ffffff;
+  --blue-color: #0083ff;
+  --error-color: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+  background: linear-gradient(-45deg, #3ca55c, #11998e, #0dd5c5);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--light-color);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--h-font);
+  color: var(--light-color);
+}
+
+.waviy {
+  font-size: 3rem;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.103));
+}
+
+.waviy span {
+  display: inline-block;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+  transition: animation 300ms;
+}
+
+.waviy:hover span {
+  animation: none;
+}
+
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-15px);
+  }
+}
+
+h1 span:first-child {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 4.5rem;
+}
+
+h2 i {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+}
+
+.bookmarkInputs {
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.bookmarkInputs label {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.bookmarkInputs .form-control {
+  background-color: #fff;
+  color: #000;
+  font-size: 1rem;
+}
+
+.btn-main {
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-main:hover {
+  background-color: #2e8b57;
+  transform: scale(1.05);
+}
+
+.table th,
+.table td {
+  color: var(--blue-color);
+  vertical-align: middle;
+}
+
+.table thead {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+}

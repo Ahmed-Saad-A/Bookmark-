@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Capriola&family=Fredericka+the+Great&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet"
+    />
+
+    
+
+
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="Css/all.min.css" />
+
+    <link rel="stylesheet" href="Css/main.css" />
+
+    <link rel="shortcut icon" href="Images/Ahmed Saad.ico" type="image/x-icon">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div class="title d-flex flex-column gap-5 justify-content-center align-items-center text-center mt-5">
+            <h1 class="waviy" title="Bookmark">
+                <span style="--i: 1">B</span>
+                <span style="--i: 2">O</span>
+                <span style="--i: 3">O</span>
+                <span style="--i: 4">K</span>
+                <span style="--i: 5">M</span>
+                <span style="--i: 6">A</span>
+                <span style="--i: 7">R</span>
+                <span style="--i: 8">K</span>
+                <span style="--i: 9">E</span>
+                <span style="--i: 10">R</span>
+            </h1>
+            <h2>
+                Bookmark your favorite sites <i class="fa-brands fa-gratipay"></i>
+            </h2>
+        </div>
+
+        <div
+            class="bookmarkInputs container mt-3 d-flex flex-column align-items-center justify-content-center gap-md-3">
+            <div class="input w-100">
+                <label for="bookmarkName"><i class="fa-solid fa-heart"></i> Name</label>
+                <input oninput="validateBookMarkName()" onkeyup="isInserted()" type="text" id="bookmarkName" class="form-control mt-2"
+                    placeholder="Bookmark Name" />
+                <span id="nameError" class="text-warning d-none">الاسم يجب أن يبدأ بحرف كابتال ويكون أطول من 3 حروف.</span>
+            </div>
+            <div class="input w-100">
+                <label for="bookmarkURL"><i class="fa-solid fa-link"></i> URL</label>
+                <input oninput="validateBookMarkUrl()" type="text" id="bookmarkURL" class="form-control mt-2"
+                    placeholder="Website URL" />
+                <span id="urlError" class="text-warning d-none">من فضلك أدخل رابط صحيح يبدأ بـ http أو https.</span>
+            </div>
+
+            <button onclick="addBookMark()" class="btn btn-main mt-4 px-4">
+                Add bookmark
+            </button>
+        </div>
+    </section>
+
+    <section class="container content-adjust pt-5">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="bookmarkContainer"></tbody>
+        </table>
+    </section>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/indeax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
