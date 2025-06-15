@@ -5,6 +5,8 @@
   --light-color: #ffffff;
   --blue-color: #0083ff;
   --error-color: #ff6b6b;
+  --text-color: #ffffff;
+  --cell-bg: rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -15,7 +17,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--main-font);
-  background: linear-gradient(-45deg, #3ca55c, #11998e, #0dd5c5);
+  background-color: #000;
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   color: var(--light-color);
@@ -25,11 +27,9 @@ body {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -39,6 +39,16 @@ h1,
 h2 {
   font-family: var(--h-font);
   color: var(--light-color);
+}
+
+h1 span:first-child {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 4.5rem;
+}
+
+h2 i {
+  font-size: 1.3rem;
+  color: var(--accent-color);
 }
 
 .waviy {
@@ -58,25 +68,12 @@ h2 {
 }
 
 @keyframes waviy {
-  0%,
-  40%,
-  100% {
+  0%, 40%, 100% {
     transform: translateY(0);
   }
-
   20% {
     transform: translateY(-15px);
   }
-}
-
-h1 span:first-child {
-  font-family: "Fredericka the Great", cursive;
-  font-size: 4.5rem;
-}
-
-h2 i {
-  font-size: 1.3rem;
-  color: var(--accent-color);
 }
 
 .bookmarkInputs {
@@ -110,17 +107,45 @@ h2 i {
   transform: scale(1.05);
 }
 
-.table th,
-.table td {
-  color: var(--blue-color);
-  vertical-align: middle;
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: transparent;
+  color: var(--light-color);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 .table thead {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.table {
-  border-radius: 10px;
-  overflow: hidden;
+.table th,
+.table td {
+  padding: 12px 10px;
+  font-weight: 400;
+  color: var(--light-color);
+  background-color: transparent;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
+
+.table th {
+  font-weight: 700;
+}
+
+.table tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table a {
+  color: var(--main-color);
+  transition: color 0.3s ease;
+}
+.table button {
+  color: var(--error-color);
+  transition: color 0.3s ease;
+}
+
